@@ -1,0 +1,51 @@
+#include <iostream>
+#include <vector>
+#include <set>
+#include<boost/algorithm/string.hpp>
+using namespace std;
+
+
+class operation {
+std::vector<set<vector<string>>> DB;
+std::set<vector<string>> table;
+std::vector<string> tuple;
+public:
+    operation(){}
+    operation(std::vector<set<vector<string>>> DB,
+    std::set<vector<string>> table,
+    std::vector<string> tuple){
+    DB = DB;
+    table = table;
+    tuple = tuple;
+}
+template <class t>
+t createTable(vector<string> tab){
+        set<t> setStore;
+        setStore.insert(tab);
+        DB.push_back(setStore);
+        cout<<"Table created"<<endl;
+    }
+
+};
+
+int main(int argc, char const *argv[])
+{
+    cout<<"                  RDBMS                         "<<endl;
+    string input;
+    std::getline(cin, input);
+    vector<string> result; 
+    boost::split(result, input, boost::is_any_of(" "));
+    
+    auto it = result.begin();
+    for(string x:result){
+        cout<<x<<endl;
+        if(x == "create table"){
+            
+         //std::vector<char> X(x.begin(),x.end());
+         
+        }
+    
+    }
+ return 0;
+    }
+    
